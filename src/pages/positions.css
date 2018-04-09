@@ -1,0 +1,61 @@
+#content .custom-info {
+    border-bottom: 1px solid #e8e8e8;
+    height: 43px;
+    line-height: 43px;
+    padding: 0 15px;
+    color: #555;
+    font-size: 1.4rem;
+    position: relative;
+}
+#content .custom-info .info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    margin-right: 100px;
+    height: 100%;
+    position: relative;
+}
+#content .custom-info .go {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    display: block;
+    float: right;
+    background-color: #f5f5f5;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 6px;
+    color: #00b38a;
+    border-radius: 15px;
+}
+#content .custom-info .icon {
+    width: 10px;
+    height: 20px;
+    background: url(/images/mobile/asset/common/img/icon.png) no-repeat -88px 7px;
+    background-size: 250px 250px;
+}
+#content .custom-info .text {
+    font-style: normal;
+}
+#copyright {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    color: #333;
+}
+#copyright .copyright-item {
+    height: 32px;
+    line-height: 32px;
+}
+#copyright .copyright-item span.active {
+    color: #999;
+}
+#copyright .copyright-item a:visited {
+    color: #333;
+}
+#copyright .copyright-item a {
+    color: #333;
+}

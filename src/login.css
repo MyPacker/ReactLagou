@@ -1,0 +1,323 @@
+/*!mobile/modules/country-code/main.less*/
+@charset "UTF-8";.area_code_list+input {
+    padding-left: 2.27rem
+}
+
+.area_code {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 1.87rem;
+    padding: .27rem .4rem .27rem 0;
+    font-size: .45rem;
+    line-height: .53rem
+}
+
+.area_code:after {
+    transform: translateY(-50%);
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .11rem .1rem 0;
+    margin-left: .13rem;
+    border-color: #ccc transparent transparent
+}
+
+.area_code.active:after {
+    transform: scale(-1)
+}
+
+.area_code_list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff
+}
+
+.area_code_list dl {
+    line-height: 36px;
+    cursor: default
+}
+
+.area_code_list dt {
+    padding-left: .43rem;
+    line-height: .51rem;
+    color: #666;
+    background-color: #F9F9FA;
+    font-size: .35rem
+}
+
+.area_code_list dd {
+    margin: 0;
+    padding-left: .37rem;
+    line-height: 1.2rem;
+    color: #333;
+    font-size: .43rem;
+    box-shadow: inset 0 -1px 0 0 rgba(232,233,235,.5)
+}
+
+.area_code_list .tips {
+    color: #999;
+    font-size: .32rem;
+    padding: .8rem .13rem;
+    text-align: center
+}
+
+.area_code_list .tips a {
+    color: #00b38a
+}
+
+/*!mobile/modules/common/main.less*/
+@charset "UTF-8";html,body {
+    height: 100%;
+    overflow: hidden
+}
+
+html {
+	font-size: 41.4px;
+}
+
+body {
+    margin: 0
+}
+
+body,input {
+    font-size: 14px;
+    font-family: PingFangSC-Regular,sans-serif,"Hiragino Sans GB","Microsoft Yahei",Arial,"Helvetica Neue",Helvetica
+}
+
+* {
+    -webkit-tap-highlight-color: transparent
+}
+
+input {
+    outline: 0;
+    border-radius: 0
+}
+
+input[type=submit],input[type=button] {
+    -webkit-appearance: none;
+    -moz-appearance: none
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc
+}
+
+input::-moz-placeholder {
+    color: #ccc
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.dn {
+    display: none
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.clearfix {
+    z-index: 1
+}
+
+.clearfix:before,.clearfix:after {
+    content: "";
+    display: block
+}
+
+a,a:hover {
+    text-decoration: none
+}
+
+.input_text {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: .27rem 0;
+    font-size: .45rem;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #E8E9EB
+}
+
+.input_text.error {
+    border-bottom-color: #fd5f39;
+    color: #fd5f39
+}
+
+.input_text.error::-webkit-input-placeholder {
+    color: #fd5f39
+}
+
+.input_text.error::-moz-input-placeholder {
+    color: #fd5f39
+}
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    max-width: 750px;
+    padding: .83rem;
+    margin: 0 auto
+}
+
+#popLayer {
+    position: absolute;
+    left: 50%;
+    top: 7.17rem;
+    padding: .32rem .4rem;
+    z-index: 999;
+    white-space: nowrap;
+    color: #fff;
+    font-size: .35rem;
+    background: rgba(0,0,0,.87);
+    border-radius: .27rem;
+    transform: translateX(-50%)
+}
+
+h2 {
+    color: #333;
+    font-size: .51rem;
+    font-weight: 400;
+    margin: .13rem 0 1.2rem
+}
+
+.form_header {
+    position: relative;
+    line-height: .69rem
+}
+
+.form_header .brother_link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: .4rem;
+    color: #00b38a
+}
+
+.input_label:first-child {
+    z-index: 2
+}
+
+.phone_wrapper {
+    z-index: 1
+}
+
+.vcode_input {
+    padding-right: 2.13rem
+}
+
+.vcode_link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: initial;
+    height: 1.09rem;
+    padding: 0;
+    font-size: .37rem;
+    color: #666;
+    border: 0;
+    background: 0 0
+}
+
+.vcode_link.btn_disabled {
+    color: #999;
+    border: 0
+}
+
+.form_container {
+    display: none
+}
+
+.form_container.active {
+    display: block
+}
+
+.form_container .form_footer {
+    position: absolute;
+    bottom: .83rem
+}
+
+.form_container .form_footer .signin_type_btn {
+    color: #00b38a;
+    font-size: .4rem
+}
+
+.input_label {
+    position: relative;
+    z-index: 0
+}
+
+.input_label+.input_label {
+    margin-top: .23rem
+}
+
+.input_label.btn_group {
+    margin-top: 1.2rem
+}
+
+.input_label .pcode_img {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    z-index: 1;
+    width: 2.61rem;
+    height: 1.07rem;
+    color: #777;
+    border: 0;
+    outline: 0
+}
+
+.input_label .pcode_link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 2.61rem;
+    height: 1.09rem;
+    text-indent: -10rem;
+    overflow: hidden
+}
+
+.input_label .submit_btn {
+    width: 100%;
+    height: 1.17rem;
+    border-radius: 3px;
+    background-color: #00b38a;
+    color: #fff;
+    font-size: .45rem;
+    border: 0
+}
+
+[data-propertyname=request_form_verifyCode] input[type=text] {
+    padding-right: 1.6rem
+}
+
+.register_agreement {
+    color: #999;
+    font-size: .37rem;
+    margin-top: .53rem
+}
+
+.register_agreement a {
+    color: #666
+}
