@@ -1,13 +1,9 @@
 
-
 ## 仿拉钩网（基于React.js）
 
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
-- [Available Scripts](#available-scripts)
+- 基本完成职位搜索功能
+- 职位信息列表已完成
 
-
-
-
-## 哈哈哈哈哈哈
+### 后续任务
+- 加载更多功能抽离组件
+- 登录注册

@@ -1,0 +1,149 @@
+.linputer {
+    position: relative;
+    border-bottom: 1px solid #e8e8e8;
+    height: 45px;
+}
+.lbutton {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 88px;
+    border-right: 1px solid #e8e8e8;
+}
+#content .lbutton span {
+    display: inline-block;
+}
+#content .lbutton .cityicon {
+    width: 8.5px;
+    height: 7px;
+    background: url(../static/images/icon1.png) no-repeat -1px -2.5px;
+    background-size: 250px 250px;
+}
+#content .rinput {
+    height: 45px;
+    margin-left: 89px;
+    position: relative;
+}
+#content .rinput .inputer {
+    display: block;
+    border: none;
+    padding: 10px 0;
+    height: 25px;
+    line-height: 25px;
+    color: #333333;
+    width: 75%;
+    margin: 0 0 0 5%;
+    font-size: 1.5rem;
+    float: left;
+}
+#content .rinput .search {
+    display: inline-block;
+    width: 20%;
+    height: 45px;
+    line-height: 45px;
+    float: right;
+    position: relative;
+}
+#content .rinput .search:active {
+    background-color: #f0f0f0;
+}
+#content .rinput .search .searchicon {
+    display: block;
+    margin: 14px auto 0 auto;
+    width: 17px;
+    height: 17px;
+    background: url(../static/images/icon1.png) no-repeat -14px -2.5px;
+    background-size: 250px 250px;
+}
+#content .history {
+    background-color: #fafafa;
+    color: #666666;
+}
+#content .history .history-item {
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 0 0 23px;
+}
+#content .history .history-item:active {
+    background-color: #f0f0f0;
+}
+#content .history .text {
+    display: inline-block;
+    height: 45px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 75%;
+}
+#content .history .delcon {
+    float: right;
+    width: 40px;
+    height: 45px;
+    text-align: center;
+    width: 14%;
+}
+#content .history .delicon {
+    display: inline-block;
+    height: 10px;
+    width: 12px;
+    background: url(../static/images/icon1.png) no-repeat -71.5px -4px;
+    background-size: 250px 250px;
+}
+.fdialog-content {
+    height: 100%;
+    background-color: #fff;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    position: fixed;
+    top: 45px;
+    left: 0;
+}
+.cities-header {
+    border-bottom: 1px solid #e8e8e8;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 15px;
+    font-size: 1.2rem;
+    color: #888;
+}
+.cities-list {
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    flex-wrap: wrap
+}
+.cities-item {
+    width: 33.333333%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    min-width: 100px;
+}
+.cities-item.selected {
+    background-color: #e7f3f0;
+}
+.fdialog-content .left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 45px;
+    width: 45px;
+    text-align: center
+}
+.fdialog-content .left .corner {
+    width: 9px;
+    height: 20px;
+    margin: 13px auto 0 auto;
+    background: url(../static/images/icon2.png) no-repeat -1.5px -20.5px;
+    background-size: 250px 250px;
+    display: inline-block;
+}

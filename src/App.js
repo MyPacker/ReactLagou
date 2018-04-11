@@ -26,7 +26,6 @@ function MyLoadingComponent(){
 class App extends Component {
   render() {
     return (
-      <Router>
         <div>
           
           <header id="header">拉勾网</header>
@@ -37,7 +36,7 @@ class App extends Component {
               <Route path="/common/positions" component={Positions}></Route>
               <Route path="/common/search" component={Search}></Route>
               <Route path="/common/my" component={My}></Route>
-              <Redirect path="/" to="/common/positions" exact></Redirect>
+              <Redirect path="/common" to="/common/positions" exact></Redirect>
             </Switch>
 
             
@@ -59,7 +58,6 @@ class App extends Component {
           </footer>
 
         </div>  
-      </Router>
     );
   }
 }

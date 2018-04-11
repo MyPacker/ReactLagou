@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./positions.css"
-import PositionItems from "./positionItems"
+import Positions_con from "./positions_con"
 
 class Positions extends Component{
     constructor(){
@@ -16,9 +16,9 @@ class Positions extends Component{
 
     render(){
         let {posiList} = this.state;
-        var clist = posiList.map(function(ele, index){
-            return <PositionItems item={ele} key={index} ></PositionItems>;
-        })
+        // var clist = posiList.map(function(ele, index){
+        //     return <PositionItems item={ele} key={index} ></PositionItems>;
+        // })
         return(
         	<div>
                 <div className="custom-info none" style={{display: "block"}}>
@@ -31,7 +31,7 @@ class Positions extends Component{
                     </a>
                 </div>
                 <ul className="list">
-                    {clist}
+                    <Positions_con posiList={posiList} />
                     <li className="activeable list-more" onClick={()=>{this.bundleMore()}}>{this.state.loadMoreText}</li>
                 </ul>
                 <div id="copyright">
@@ -50,9 +50,8 @@ class Positions extends Component{
         let _this = this;
         axios.get("/listmore.json?pageNo=1&pageSize=15").then(function(response){
             var posiList = response.data.content.data.page.result;
-            console.log(response)
             _this.setState({
-                posiList
+                posiList: posiList
             })
         })
     }

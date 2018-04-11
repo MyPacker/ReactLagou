@@ -75,14 +75,8 @@
     color: #00b38a
 }
 
-/*!mobile/modules/common/main.less*/
-@charset "UTF-8";html,body {
+html,body {
     height: 100%;
-    overflow: hidden
-}
-
-html {
-	font-size: 41.4px;
 }
 
 body {
@@ -94,9 +88,6 @@ body,input {
     font-family: PingFangSC-Regular,sans-serif,"Hiragino Sans GB","Microsoft Yahei",Arial,"Helvetica Neue",Helvetica
 }
 
-* {
-    -webkit-tap-highlight-color: transparent
-}
 
 input {
     outline: 0;
@@ -150,8 +141,8 @@ a,a:hover {
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    padding: .27rem 0;
-    font-size: .45rem;
+    padding: 1.1rem 0;
+    font-size: 1.6rem;
     color: #333;
     border: 0;
     border-bottom: 1px solid #E8E9EB
@@ -174,8 +165,7 @@ a,a:hover {
     height: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    max-width: 750px;
-    padding: .83rem;
+    padding: 2.3rem 2.6em;
     margin: 0 auto
 }
 
@@ -195,21 +185,20 @@ a,a:hover {
 
 h2 {
     color: #333;
-    font-size: .51rem;
+    font-size: 2rem;
     font-weight: 400;
-    margin: .13rem 0 1.2rem
+    margin: 1rem 0 4rem
 }
 
 .form_header {
     position: relative;
-    line-height: .69rem
 }
 
 .form_header .brother_link {
     position: absolute;
     right: 0;
     top: 0;
-    font-size: .4rem;
+    font-size: 1.5rem;
     color: #00b38a
 }
 
@@ -231,9 +220,9 @@ h2 {
     top: 0;
     z-index: 2;
     width: initial;
-    height: 1.09rem;
+    height: 4rem;
     padding: 0;
-    font-size: .37rem;
+    font-size: 1.5rem;
     color: #666;
     border: 0;
     background: 0 0
@@ -254,12 +243,12 @@ h2 {
 
 .form_container .form_footer {
     position: absolute;
-    bottom: .83rem
+    bottom: 2.83rem
 }
 
 .form_container .form_footer .signin_type_btn {
     color: #00b38a;
-    font-size: .4rem
+    font-size: 1.4rem
 }
 
 .input_label {
@@ -272,7 +261,7 @@ h2 {
 }
 
 .input_label.btn_group {
-    margin-top: 1.2rem
+    margin-top: 4.2rem
 }
 
 .input_label .pcode_img {
@@ -280,8 +269,8 @@ h2 {
     right: 0;
     bottom: 1px;
     z-index: 1;
-    width: 2.61rem;
-    height: 1.07rem;
+    width: 9rem;
+    height: 3.5rem;
     color: #777;
     border: 0;
     outline: 0
@@ -292,19 +281,19 @@ h2 {
     right: 0;
     bottom: 0;
     z-index: 2;
-    width: 2.61rem;
-    height: 1.09rem;
+    width: 9rem;
+    height: 3.5rem;
     text-indent: -10rem;
     overflow: hidden
 }
 
 .input_label .submit_btn {
     width: 100%;
-    height: 1.17rem;
+    height: 4rem;
     border-radius: 3px;
     background-color: #00b38a;
     color: #fff;
-    font-size: .45rem;
+    font-size: 1.5em;
     border: 0
 }
 
@@ -314,7 +303,7 @@ h2 {
 
 .register_agreement {
     color: #999;
-    font-size: .37rem;
+    font-size: 1.37rem;
     margin-top: .53rem
 }
 

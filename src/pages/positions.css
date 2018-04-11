@@ -59,3 +59,23 @@
 #copyright .copyright-item a {
     color: #333;
 }
+.list .list-empty {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #c2cfcc;
+}
+.list .list-empty .icon {
+    width: 20px;
+    height: 20px;
+    background: url(/images/mobile/asset/common/img/icon.png) no-repeat -70px -18.5px;
+    background-size: 250px 250px;
+}
+.list .list-empty .icon, .list .list-empty .text {
+    display: inline-block;
+    vertical-align: middle;
+}
+.list .list-empty .text {
+    display: inline-block;
+    vertical-align: middle;
+}

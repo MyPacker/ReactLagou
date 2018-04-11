@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./login.css";
+import "./logres.css";
 
 import { 
   BrowserRouter as Router, 
@@ -20,7 +20,7 @@ class Login extends Component{
                 <section className="form_container active">
                     <header className="form_header">
                         <h2>登录拉勾</h2>
-                        <a href="#" className="brother_link">注册</a>
+                        <NavLink to="/register" className="brother_link">注册</NavLink>
                     </header>
                     <form className="form_body form_password" method="post">
                         <div className="input_label">
