@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./positions.css"
-import Positions_con from "./positions_con"
+import "./positions.css";
+import Positions_con from "./positions_con";
 
 class Positions extends Component{
     constructor(){
         super();
-        this.pageLoad()
         this.state = {
-            posiList: [],
             pageNumCurr: 1,
-            loadMoreText: "加载更多" 
-        }
+            emptyDisplay: "none",
+            pageType: "positions"
+        };
     }
 
     render(){
-        let {posiList} = this.state;
-        // var clist = posiList.map(function(ele, index){
-        //     return <PositionItems item={ele} key={index} ></PositionItems>;
-        // })
+        let { posiList, pageNumCurr, emptyDisplay, pageType } = this.state;
+        
         return(
         	<div>
                 <div className="custom-info none" style={{display: "block"}}>
@@ -30,10 +27,7 @@ class Positions extends Component{
                         <em className="text">去登录</em>
                     </a>
                 </div>
-                <ul className="list">
-                    <Positions_con posiList={posiList} />
-                    <li className="activeable list-more" onClick={()=>{this.bundleMore()}}>{this.state.loadMoreText}</li>
-                </ul>
+                <Positions_con pageType={pageType} emptyDisplay={emptyDisplay} />
                 <div id="copyright">
                     <p>©2015 lagou.com, all right reserved </p>
                     <div className="copyright-item">
@@ -46,34 +40,9 @@ class Positions extends Component{
         )
     }
 
-    pageLoad(){
-        let _this = this;
-        axios.get("/listmore.json?pageNo=1&pageSize=15").then(function(response){
-            var posiList = response.data.content.data.page.result;
-            _this.setState({
-                posiList: posiList
-            })
-        })
-    }
+   
 
-    bundleMore(){
-        var _this = this;
-        this.state.pageNumCurr++
-        this.setState({
-            pageNumCurr: this.state.pageNumCurr,
-            loadMoreText: "加载中......"
-        })
-        axios.get("/listmore.json?pageNo="+ _this.state.pageNumCurr +"&pageSize=15").then(function(res){
-            console.log(_this.state.pageNumCurr)
-            var posiList = res.data.content.data.page.result;
-            console.log(posiList)
-            _this.setState({
-                posiList: [..._this.state.posiList, ...posiList],
-                loadMoreText: "加载更多"
-            })
-            
-        })
-    }
+  
 
 }
 

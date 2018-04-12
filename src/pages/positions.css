@@ -59,23 +59,33 @@
 #copyright .copyright-item a {
     color: #333;
 }
-.list .list-empty {
+.list-empty {
     text-align: center;
     font-size: 1.5rem;
     margin-top: 30px;
     color: #c2cfcc;
 }
-.list .list-empty .icon {
+.list-empty .icon {
     width: 20px;
     height: 20px;
     background: url(/images/mobile/asset/common/img/icon.png) no-repeat -70px -18.5px;
     background-size: 250px 250px;
 }
-.list .list-empty .icon, .list .list-empty .text {
+.list-empty .icon, .list .list-empty .text {
     display: inline-block;
     vertical-align: middle;
 }
-.list .list-empty .text {
+.list-empty .text {
     display: inline-block;
     vertical-align: middle;
+}
+.list-more {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #fafafa;
+}
+.list-more:active {
+    background-color: #f0f0f0;
 }

@@ -8,15 +8,11 @@ import {
   BrowserRouter as Router, 
   Route, 
   Switch,
-  NavLink,
   Redirect
 } from 'react-router-dom';
 
 class Wrap extends Component{
-    constructor(){
-        super()
-    }
-
+    
     render(){
         return(
             <Router>

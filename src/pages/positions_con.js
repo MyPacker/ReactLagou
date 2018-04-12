@@ -1,19 +1,53 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./positions.css"
-import PositionItems from "./positionItems"
+import PositionItems from "./positionItems";
+import Loadmore from "./loadmore";
 
 class PositionsCon extends Component{
     constructor(){
-        super()
+        super();
+        this.state = {
+            posiList: [],
+            pageNumCurr: 1
+        }
+        this.setStateOne = this.setStateOne.bind(this);
+        this.setStateSec = this.setStateSec.bind(this);
     }
 
-   
+    componentWillMount(){
+        let { posiList, pageType } = this.props;
+        console.log(posiList)
+        console.log(pageType)
+        if(pageType == "positions"){
+            console.log(pageType)
+            var _this = this;
+            axios.get("/listmore.json?pageNo=1&pageSize=15").then(function(response){
+                _this.setState({
+                    posiList: response.data.content.data.page.result
+                })
+            })
+        } 
+    }
+
+    componentWillReceiveProps(){
+        console.log(this.props.posiList)
+        if (this.props.pageType == "search") {
+            this.setState({
+                posiList: this.props.posiList
+            })
+        }
+    }
+
     render(){
-        let {posiList, emptyDisplay} = this.props;
+        let {pageNumCurr, posiList} = this.state;
+        let {emptyDisplay} = this.props; 
+        
         var clist;
-        if(posiList.length){
-            clist = posiList.map(function(ele, index){
+        
+        console.log(posiList)
+        if(posiList.length>0){
+            clist = this.state.posiList.map(function(ele, index){
                 return <PositionItems item={ele} key={index} ></PositionItems>;
             })
         } else {
@@ -22,14 +56,29 @@ class PositionsCon extends Component{
         
         return(
             <div>
-                {clist}
+                <ul className="list">
+                    {clist}
+                </ul>
+                <Loadmore pageNumCurr={pageNumCurr} setStateOne={this.setStateOne} setStateSec={this.setStateSec} />
             </div>
+            
         )
     } 
 
-    componentWillMount(){
-        console.log("ComponentWillMount")
+   
+    setStateOne(newpageNumCurr){
+        this.setState({
+            pageNumCurr: newpageNumCurr,
+        })
     }
+    setStateSec(newposiList){
+        var _this = this;
+        this.setState({
+            posiList: [..._this.state.posiList, ...newposiList],
+            loadMoreText: "加载更多"
+        })
+    }
+
 
 }
 
@@ -46,6 +95,10 @@ class EmptyInfo extends Component{
             </li>
         )
     }
+}
+
+class xx extends React.Component{
+
 }
     
 export default PositionsCon

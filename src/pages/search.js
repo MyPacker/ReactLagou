@@ -16,7 +16,9 @@ class Search extends Component{
             emptyDisplay: "none",
             selectCityName: "成都",
             positionName: "",
-            posiList: []
+            posiList: [],
+            pageNumCurr: 1,
+            pageType: "search"
         }
         this.handleHistory = this.handleHistory.bind(this);
         this.handelHisState = this.handelHisState.bind(this);
@@ -24,20 +26,22 @@ class Search extends Component{
         this.selectCityList = this.selectCityList.bind(this);
         this.handleCity = this.handleCity.bind(this);
         this.searchPublic = this.searchPublic.bind(this);
+        this.setStateOne = this.setStateOne.bind(this);
+        this.setStateSec = this.setStateSec.bind(this);
     }
 
     render(){
         var _this = this;
-        let { historyList, posiList, emptyDisplay } = this.state;
+        let { historyList, posiList, emptyDisplay, pageNumCurr, selectCityName, historyDisplay, cityDisplay, pageType } = this.state;
         var hisList = historyList.map(function(ele, index){
-            return <SearchHistory item={ele} city={_this.state.selectCityName} ondele={_this.handelDele} onsearhistory={_this.searchPublic} _id={index} key={index}></SearchHistory>
+            return <SearchHistory item={ele} city={selectCityName} ondele={_this.handelDele} onsearhistory={_this.searchPublic} _id={index} key={index}></SearchHistory>
         });
         
         return(
             <div>
                 <div className="linputer">
                     <div className="lbutton" onClick={this.selectCityList}>
-                        <span className="city">{this.state.selectCityName}</span>
+                        <span className="city">{selectCityName}</span>
                         <span className="cityicon"></span>
                     </div>
                     <div className="rinput">
@@ -47,13 +51,11 @@ class Search extends Component{
                         </span>
                     </div>
                 </div>
-                <ul className="history" style={{display: this.state.historyDisplay}}>
+                <ul className="history" style={{display: historyDisplay}}>
                     {hisList}
                 </ul>
-                <ul className="list">
-                    <Positions_con posiList={posiList} emptyDisplay={emptyDisplay} />
-                </ul>
-                <SearchCity display={this.state.cityDisplay} onhandlecity={this.handleCity} />
+                <Positions_con posiList={posiList} pageType={pageType} emptyDisplay={emptyDisplay} />
+                <SearchCity display={cityDisplay} onhandlecity={this.handleCity} />
             </div>
         )
     }
@@ -134,13 +136,28 @@ class Search extends Component{
                     posiList: list,
                     historyDisplay: "none"
                 })
-                // var resuleList = selectCityResult.map(function(ele, index){
+                // var resuleList = _this.state.posiList.map(function(ele, index){
                 //     return <PositionItems item={ele} key={index} />
                 // })
             }
         })
     }
+
+    setStateOne(newpageNumCurr){
+        this.setState({
+            pageNumCurr: newpageNumCurr,
+        })
+    }
+    setStateSec(newposiList){
+        var _this = this;
+        this.setState({
+            posiList: [..._this.state.posiList, ...newposiList],
+            loadMoreText: "加载更多"
+        })
+    }
+
 }
 
 
 export default Search
+

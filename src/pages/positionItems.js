@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./positionItems.css"
 
 class PositionItems extends Component{
-    constructor(){
-        super();
-    }
+   
     render(){
         let {item} = this.props;
         return(
             <li className="activeable list-item">
-                <img src={"https://static.lagou.com/" + item.companyLogo} className="item-logo" />
+                <img src={"https://static.lagou.com/" + item.companyLogo} className="item-logo" alt="加载失败" />
                 <div className="item-desc">
                     <h2 className="item-title">{item.companyName}</h2>
                     <p className="item-info">

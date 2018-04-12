@@ -56,13 +56,3 @@
     font-size: 1rem;
     color: #888;
 }
-.list .list-more {
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    font-size: 1.5rem;
-    background-color: #fafafa;
-}
-.list .list-more:active {
-    background-color: #f0f0f0;
-}
