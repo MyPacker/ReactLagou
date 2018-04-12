@@ -25,9 +25,12 @@
     top: 33px;
 }
 #content .buttons {
-    margin-bottom: 10px;
-    padding: 0 15px;
+    width:92%;
+    margin: 10px auto;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
 }
 #content .buttons .button {
     display: block;
@@ -41,15 +44,57 @@
     margin-top: 10px;
     position: relative;
 }
-#content .buttons .interview {
-    float: right;
+#content .haslogin {
+    position: relative;
+    width: 100%;
+    top: 10px;
+    height: 111px;
 }
-#content .buttons .deliver {
-    float: left;
+#content .haslogin .button {
+    position: absolute;
+    color: #00b38a;
+    font-size: 1.4rem;
+    right: 1rem;
 }
-#content .buttons .invitation {
-    float: left;
+#content .haslogin .headcon {
+    height: 81px;
+    width: 81px;
+    margin: 0 auto;
+    -webkit-border-radius: 40.5px;
+    -moz-border-radius: 40.5px;
+    border-radius: 40.5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    overflow: hidden;
+    background-color: #f6f6f6;
 }
-#content .buttons .collect {
-    float: right;
+#content .haslogin .headpic {
+    width: 72px;
+    height: 72px;
+    margin: 4px 0 0 1px;
+    -webkit-border-radius: 36px;
+    -moz-border-radius: 36px;
+    border-radius: 36px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+#content .haslogin .name {
+    font-size: 1.4rem;
+    color: #333;
+    height: 22px;
+    line-height: 22px;
+}
+#content .logout {
+    display: block;
+    width: 92%;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #1fc8a1;
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }

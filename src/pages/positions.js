@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./positions.css";
-import Positions_con from "./positions_con";
+import PositionsCon from "./positionsCon";
 
 class Positions extends Component{
     constructor(){
@@ -9,12 +8,25 @@ class Positions extends Component{
         this.state = {
             pageNumCurr: 1,
             emptyDisplay: "none",
-            pageType: "positions"
+            pageType: "positions",
+            loginStateInfo: true
         };
     }
 
+    componentWillMount(){
+        var LoginUser = localStorage.getItem("LoginUser")
+        if(LoginUser){
+            this.setState({
+                loginStateInfo: false
+            })
+            return
+        }else{
+            // this.props.history.push("/login")
+        }
+    }
+
     render(){
-        let { posiList, pageNumCurr, emptyDisplay, pageType } = this.state;
+        let { emptyDisplay, pageType, loginStateInfo } = this.state;
         
         return(
         	<div>
@@ -22,12 +34,12 @@ class Positions extends Component{
                     <span className="info">
                         10秒钟定制职位
                     </span>
-                    <a className="go" href="/frontLogin.do" target="_self">
+                    <span className="go" onClick={()=>{this.handleTargetLogin()}}>
                         <em className="icon"></em>
-                        <em className="text">去登录</em>
-                    </a>
+                        <em className="text">{ loginStateInfo ? "去登录" : "编辑" }</em>
+                    </span>
                 </div>
-                <Positions_con pageType={pageType} emptyDisplay={emptyDisplay} />
+                <PositionsCon pageType={pageType} emptyDisplay={emptyDisplay}></PositionsCon>
                 <div id="copyright">
                     <p>©2015 lagou.com, all right reserved </p>
                     <div className="copyright-item">
@@ -40,6 +52,15 @@ class Positions extends Component{
         )
     }
 
+    handleTargetLogin(){
+        var loginStateInfo = this.state.loginStateInfo;
+        if(loginStateInfo){
+            this.props.history.push("/login")
+        }else{
+            // this.props.history.push("/login")
+            console.log("你已经登录了哦~~~~~~~~~~~~~")
+        }
+    }
    
 
   

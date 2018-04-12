@@ -1,12 +1,5 @@
 import React, { Component } from "react";
 import "./search.css";
-import { 
-  BrowserRouter as Router, 
-  Route, 
-  Switch,
-  Link,
-  Redirect
-} from 'react-router-dom';
 
 class SearchCity extends Component{
     constructor(){

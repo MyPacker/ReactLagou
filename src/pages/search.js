@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./search.css";
 import SearchHistory from "./searchHistory";
-import SearchCity from "./search_city";
-import PositionItems from "./positionItems";
-import Positions_con from "./positions_con"
+import SearchCity from "./searchCity";
+import PositionsCon from "./positionsCon"
 import axios from "axios";
 
 class Search extends Component{
@@ -32,7 +31,7 @@ class Search extends Component{
 
     render(){
         var _this = this;
-        let { historyList, posiList, emptyDisplay, pageNumCurr, selectCityName, historyDisplay, cityDisplay, pageType } = this.state;
+        let { historyList, posiList, emptyDisplay, selectCityName, historyDisplay, cityDisplay, pageType, showhinde } = this.state;
         var hisList = historyList.map(function(ele, index){
             return <SearchHistory item={ele} city={selectCityName} ondele={_this.handelDele} onsearhistory={_this.searchPublic} _id={index} key={index}></SearchHistory>
         });
@@ -54,7 +53,7 @@ class Search extends Component{
                 <ul className="history" style={{display: historyDisplay}}>
                     {hisList}
                 </ul>
-                <Positions_con posiList={posiList} pageType={pageType} emptyDisplay={emptyDisplay} />
+                <PositionsCon posiList={posiList} pageType={pageType} showhinde={showhinde} emptyDisplay={emptyDisplay} />
                 <SearchCity display={cityDisplay} onhandlecity={this.handleCity} />
             </div>
         )
@@ -122,6 +121,9 @@ class Search extends Component{
 
     searchPublic(cityName, positionName) {
         let _this = this;
+        this.setState({
+            showhinde: true
+        })
         // 搜索
         axios.get(`/search.json?city=${cityName}&positionName=${positionName}&pageNo=1&pageSize=15`).then(function(response){
             var list = response.data.content.data.page.result

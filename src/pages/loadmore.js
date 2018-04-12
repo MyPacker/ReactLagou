@@ -12,9 +12,19 @@ class Loadmore extends Component{
     }
 
     render(){
+        let { showhinde } = this.props
         return(
-            <div disabled="disabled" className="activeable list-more" onClick={()=>{this.bundleMore()}}>{this.state.loadMoreText}</div>
+            <div className="activeable list-more" style={{ display: (showhinde ? "block" : "none" ) }} onClick={()=>{this.bundleMore()}}>{this.state.loadMoreText}</div>
         )
+    }
+
+    componentWillMount(){
+        console.log(this.props.posiList)
+        // if(this.props.posiList){
+        //     this.setState({
+        //         showhinde: false
+        //     })
+        // }
     }
 
     componentDidMount(){

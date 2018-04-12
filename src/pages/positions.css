@@ -62,7 +62,7 @@
 .list-empty {
     text-align: center;
     font-size: 1.5rem;
-    margin-top: 30px;
+    margin: 30px auto;
     color: #c2cfcc;
 }
 .list-empty .icon {

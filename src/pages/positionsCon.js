@@ -16,15 +16,16 @@ class PositionsCon extends Component{
     }
 
     componentWillMount(){
-        let { posiList, pageType } = this.props;
+        let { posiList, pageType, showhinde } = this.props;
         console.log(posiList)
         console.log(pageType)
-        if(pageType == "positions"){
+        if(pageType === "positions"){
             console.log(pageType)
             var _this = this;
             axios.get("/listmore.json?pageNo=1&pageSize=15").then(function(response){
                 _this.setState({
-                    posiList: response.data.content.data.page.result
+                    posiList: response.data.content.data.page.result,
+                    showhinde: true
                 })
             })
         } 
@@ -32,15 +33,20 @@ class PositionsCon extends Component{
 
     componentWillReceiveProps(){
         console.log(this.props.posiList)
-        if (this.props.pageType == "search") {
+        if (this.props.pageType === "search") {
             this.setState({
-                posiList: this.props.posiList
+                posiList: this.props.posiList,
+                showhinde: false
             })
+
         }
     }
 
+   
+
+
     render(){
-        let {pageNumCurr, posiList} = this.state;
+        let {pageNumCurr, posiList, showhinde} = this.state;
         let {emptyDisplay} = this.props; 
         
         var clist;
@@ -59,7 +65,7 @@ class PositionsCon extends Component{
                 <ul className="list">
                     {clist}
                 </ul>
-                <Loadmore pageNumCurr={pageNumCurr} setStateOne={this.setStateOne} setStateSec={this.setStateSec} />
+                <Loadmore pageNumCurr={pageNumCurr} showhinde={showhinde} setStateOne={this.setStateOne} setStateSec={this.setStateSec} />
             </div>
             
         )
@@ -97,8 +103,6 @@ class EmptyInfo extends Component{
     }
 }
 
-class xx extends React.Component{
 
-}
     
 export default PositionsCon
